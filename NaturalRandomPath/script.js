@@ -12,14 +12,14 @@ function draw() {
 }
 
 class Walker {
-  constructor() {
+  constructor() { //Posicion inicial w & h del canvas
     this.x = width / 2;
     this.y = height / 2;
   }
 
   render() {
-    stroke(0);
-    point(this.x, this.y);
+    stroke(0); // Dibuja una line de color (0) (negro)
+    point(this.x, this.y); //Iniciar la posicion inicial
   }
 
   step() {

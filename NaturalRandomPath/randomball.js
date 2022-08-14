@@ -27,7 +27,7 @@ class Walker {
 
   walk() {
     // Noise returns a value between 0 and 1
-    this.position.x = map(noise(this.noff.x), 0, 1, 0, width);
+    this.position.x = map(noise(this.noff.x), 0, 1, 0, width); //map(value, start1, stop1, start2, stop2, [withinBounds])
     this.position.y = map(noise(this.noff.y), 0, 1, 0, height);
     this.noff.add(0.01, 0.01, 0);
   }
