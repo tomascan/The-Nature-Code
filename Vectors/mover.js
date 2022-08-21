@@ -4,6 +4,7 @@ class Mover{
       this.velocity = createVector();
       this.acceleration = createVector();
       this.topspeed = 5;
+      this.r = 6;
     }
   
     update() {
@@ -19,9 +20,28 @@ class Mover{
     }
   
     display() {
-      stroke(0);
-      strokeWeight(2);
+      if(form === "ellipse"){
+        stroke(200);
+        strokeWeight(1);
+        fill(127);
+        ellipse(this.position.x, this.position.y, 48, 48);  
+      }
+      if(form === "triangle"){
+      // Draw a triangle rotated in the direction of velocity
+      let theta = this.velocity.heading() + PI / 2;
       fill(127);
-      ellipse(this.position.x, this.position.y, 48, 48);
+      stroke(200); // Color del borde del vehiculo
+      strokeWeight(1); //Dimension del borde
+      push();
+      translate(this.position.x, this.position.y);
+      rotate(theta);
+      beginShape();
+      vertex(0, -this.r * 2);
+      vertex(-this.r, this.r * 2);
+      vertex(this.r, this.r * 2);
+      endShape(CLOSE);
+      pop();
+      }
     }
+    
   }
